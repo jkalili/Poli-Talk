@@ -53,22 +53,7 @@ const styles = StyleSheet.create({
         padding: 15,
         fontSize: 18,
     }
+    //TEST TEST TEST
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default WelcomeScreen;
