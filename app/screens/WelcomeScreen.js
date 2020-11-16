@@ -1,6 +1,8 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, View, Text, Button } from 'react-native';
 
+import colors from '../config/colors'
+
 function WelcomeScreen(props) {
     return (
         <ImageBackground
@@ -12,8 +14,12 @@ function WelcomeScreen(props) {
                 <Text style = {styles.text}>DEPOLARIZE THE POLITICAL SPACE</Text>
             </View>
 
-            <View style = {styles.loginButton}></View>
-            <View style = {styles.registerButton}></View>
+            <View style = {styles.loginButton}>
+                <Text style = {styles. buttonText}>LOG IN</Text>
+            </View>
+            <View style = {styles.registerButton}>
+                <Text style = {styles. buttonText}>SIGN UP</Text>
+            </View>
         </ImageBackground>
     );
 }
@@ -29,17 +35,17 @@ const styles = StyleSheet.create({
     loginButton: {
         width: "100%",
         height: 70,
-        backgroundColor: "#848484",
+        backgroundColor: colors.secondary,
     },
 
     registerButton: {
         width: "100%",
         height: 70,
-        backgroundColor: "#4c4c4c",
+        backgroundColor: colors.primary,
     },
 
     logo: {
-        width: 188,
+        width: 184,
         height: 122,
     },
 
@@ -52,8 +58,16 @@ const styles = StyleSheet.create({
     text: {
         padding: 15,
         fontSize: 18,
+        fontWeight: "bold",
+    },
+
+    buttonText: {
+        color: "white",
+        alignSelf: "center",
+        fontSize: 22,
+        fontWeight: "bold",
+        paddingTop: 20,  
     }
-    
 })
 
 export default WelcomeScreen;
