@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, View, Text, Button } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
 
 import colors from '../config/colors'
 
@@ -14,12 +14,12 @@ function WelcomeScreen(props) {
                 <Text style = {styles.text}>DEPOLARIZE THE POLITICAL SPACE</Text>
             </View>
 
-            <View style = {styles.loginButton}>
+            <TouchableOpacity style = {styles.loginButton} onPress = {() => console.log("PRESSED")}>
                 <Text style = {styles. buttonText}>LOG IN</Text>
-            </View>
-            <View style = {styles.registerButton}>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.registerButton} onPress = {() => alert("In Beta Testing. Please Press 'Log In'")}>
                 <Text style = {styles. buttonText}>SIGN UP</Text>
-            </View>
+            </TouchableOpacity>
         </ImageBackground>
     );
 }
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: "white",
         alignSelf: "center",
+        justifyContent: "center",
         fontSize: 22,
         fontWeight: "bold",
         paddingTop: 20,  
