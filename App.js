@@ -7,5 +7,5 @@ import Meeting from "./app/screens/Meeting";
 import MenuScreen from "./app/screens/MenuScreen"
 
 export default function App() {
-  return <ComingSoon/>;
+  return <Meeting/>;
 }
