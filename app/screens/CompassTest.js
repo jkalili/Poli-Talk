@@ -6,7 +6,7 @@ function CompassTest(props) {
     return (
     <ImageBackground
         style = {styles.background}        
-        source={require("../assets/welcome.jpg")} 
+        source={require("../assets/compassBackground.jpg")} 
     >
         <View style={styles.logoContainer}>
             <Image style={styles.logo} source={require("../assets/LogoGray.png")} />
@@ -14,8 +14,8 @@ function CompassTest(props) {
         </View>
         
         <View style={styles.buttonsContainer}>   
-            <AppButton title ="Begin Test" />
-            <AppButton title = "Go Back "   />
+            <AppButton title ="Begin Test"/>
+            <AppButton title = "Go Back "/>
         </View>    
         </ImageBackground>
          
