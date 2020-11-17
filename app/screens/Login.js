@@ -3,11 +3,11 @@ import { Image, ImageBackground, StyleSheet, View, Text, Button, TouchableOpacit
 
 import colors from '../config/colors'
 
-function WelcomeScreen(props) {
+function Login(props) {
     return (
         <ImageBackground
             style={styles.background}
-            source={require ('../assets/background.jpg')}
+            source={require ('../assets/background2.jpg')}
         >
             <View style = {styles.logoContainer}>
                 <Image resizeMode="contain" style = {styles.logo} source={require('../assets/LogoGray.png')}/>
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default WelcomeScreen;
+export default Login;

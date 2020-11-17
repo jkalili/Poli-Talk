@@ -1,18 +1,20 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback } from 'react-native';
 
 import colors from '../config/colors'
 
 function ComingSoon(props) {
     return (
-        <ImageBackground
+        <TouchableWithoutFeedback style = {styles.logoContainer} onPress = {() => alert("Tap to leave")}>
+            <ImageBackground
             style={styles.background}
-            source={require ('../assets/background.jpg')}
-        >
-            <View style = {styles.logoContainer}>
+            blurRadius={3}
+            source={require ('../assets/background2.jpg')}
+            >
                 <Text style = {styles.text}>UNDER CONSTRUCTION</Text>
-            </View>
-        </ImageBackground>
+                <Text style = {styles.subtext}>TAP ANYWHERE TO LEAVE</Text>
+            </ImageBackground>
+        </TouchableWithoutFeedback>
     );
 }
 
@@ -24,9 +26,16 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        fontSize: 40,
+        fontSize: 30,
         fontWeight: "bold",
         alignSelf: "center",
+    },
+    
+    subtext: {
+        fontSize: 12,
+        fontWeight: "bold",
+        alignSelf: "center",
+        color: colors.secondary,
     },
 })
 

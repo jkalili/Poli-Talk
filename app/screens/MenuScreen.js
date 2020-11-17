@@ -8,10 +8,10 @@ function MenuScreen(props) {
         <ImageBackground 
         blurRadius = {8}
         style = {styles.background}
-        source ={require('../assets/background.jpg')}
+        source ={require('../assets/background1.jpg')}
         >
         <View style = {styles.profile}>
-            <Image style = {styles.image} source ={require('../assets/profile.jpeg')}/>
+            <Image style = {styles.image} source ={require('../assets/profileAdrian.jpeg')}/>
         </View>
         <View style ={styles.newscard}>
             <Text>This is where recent news would go</Text>
@@ -35,20 +35,22 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent:"flex-end",
     },
+
     newscard: {
         position: "absolute",
         borderRadius: 15,
-        backgroundColor: colors.white,
+        backgroundColor: colors.offWhite,
         marginLeft: '5%',
         height: '70%',
         width: '40%',
         top:'15%',
         alignItems:"center",
     },
+
     topicsCard: {
         position: "absolute",
         borderRadius: 15,
-        backgroundColor: colors.white,
+        backgroundColor: colors.offWhite,
         marginLeft: 20,
         height: '50%',
         width: '40%',
@@ -57,10 +59,11 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginBottom:20,
     },
+
     friendsListCard: {
         position: "absolute",
         borderRadius: 15,
-        backgroundColor: colors.white,
+        backgroundColor: colors.offWhite,
         marginLeft: 20,
         height: '15%',
         width: '40%',
@@ -68,17 +71,20 @@ const styles = StyleSheet.create({
         right:'5%',
         alignItems: "center",
     },
+
     navBottom:{
         backgroundColor: '#D3D3D3',
         width: '100%',
         height: 80,
         alignItems: "center",
     },
+
     image:{
         width: 60,
         height: 60,
         borderRadius: 30,
     },
+    
     profile:{
         position: 'absolute',
         right: 30,
