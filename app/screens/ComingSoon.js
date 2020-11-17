@@ -11,8 +11,10 @@ function ComingSoon(props) {
             blurRadius={3}
             source={require ('../assets/background2.jpg')}
             >
-                <Text style = {styles.text}>UNDER CONSTRUCTION</Text>
-                <Text style = {styles.subtext}>TAP ANYWHERE TO LEAVE</Text>
+                
+                <Text style = {styles.text} >UNDER CONSTRUCTION</Text>
+                <Text style = {styles.subtext}>TAP ANYWHERE TO EXIT</Text>
+
             </ImageBackground>
         </TouchableWithoutFeedback>
     );
