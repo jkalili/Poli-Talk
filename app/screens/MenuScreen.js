@@ -6,10 +6,14 @@ import colors from '../config/colors'
 function MenuScreen(props) {
     return (
         <ImageBackground 
-        blurRadius = {8}
+        blurRadius = {5}
         style = {styles.background}
         source ={require('../assets/background1.jpg')}
         >
+        <View style = {styles.logo}>
+            <Image style = {styles.image} resizeMode="contain" source ={require('../assets/LogoGray.png')}/>
+        </View>
+
         <View style = {styles.profile}>
             <Image style = {styles.image} source ={require('../assets/profileAdrian.jpeg')}/>
         </View>
@@ -35,15 +39,21 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent:"flex-end",
     },
+    
+    logo: {
+        position: 'absolute',
+        left: 20,
+        top: '2%',
+    },
 
     newscard: {
         position: "absolute",
         borderRadius: 15,
         backgroundColor: colors.offWhite,
         marginLeft: '5%',
-        height: '70%',
-        width: '40%',
-        top:'15%',
+        height: '75%',
+        width: '45%',
+        top:'12%',
         alignItems:"center",
     },
 
@@ -52,9 +62,9 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: colors.offWhite,
         marginLeft: 20,
-        height: '50%',
-        width: '40%',
-        top:'15%',
+        height: '53%',
+        width: '43%',
+        top:'12%',
         right:'5%',
         alignItems: "center",
         marginBottom:20,
@@ -65,9 +75,9 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         backgroundColor: colors.offWhite,
         marginLeft: 20,
-        height: '15%',
-        width: '40%',
-        top:'70%',
+        height: '21%',
+        width: '43%',
+        top:'66%',
         right:'5%',
         alignItems: "center",
     },
@@ -87,8 +97,8 @@ const styles = StyleSheet.create({
     
     profile:{
         position: 'absolute',
-        right: 30,
-        top: '5%',
+        right: 20,
+        top: '2%',
     }
 })
 export default MenuScreen;
