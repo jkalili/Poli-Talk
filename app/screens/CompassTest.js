@@ -5,6 +5,7 @@ import AppButton from '../components/AppButton';
 function CompassTest(props) {
     return (
     <ImageBackground
+        blurRadius = {5}
         style = {styles.background}        
         source={require("../assets/compassBackground.jpg")} 
     >
