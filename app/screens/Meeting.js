@@ -16,23 +16,23 @@ function Meeting(props) {
 
             <View style = {styles.toolbar}>
                 <View style = {styles.mute}>
-                    <MaterialCommunityIcons name ="microphone" color = {colors.darkGrey}  size= {40}></MaterialCommunityIcons>
+                    <MaterialCommunityIcons name ="microphone" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
                 </View>
 
                 <View style = {styles.camera}>
-                    <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {40}></MaterialCommunityIcons>
+                    <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
                 </View>
 
                 <View style = {styles.settings}>
-                    <MaterialIcons name ="settings" color = {colors.darkGrey}  size= {40}></MaterialIcons>
+                    <MaterialIcons name ="settings" color = {colors.darkGrey}  size= {30}></MaterialIcons>
                 </View>
 
                 <View style = {styles.report}>
-                    <MaterialIcons name ="report" color = {colors.darkGrey}  size= {40}></MaterialIcons>
+                    <MaterialIcons name ="report" color = {colors.darkGrey}  size= {30}></MaterialIcons>
                 </View>
 
                 <View style = {styles.endCall}>
-                    <MaterialCommunityIcons name ="close" color = {colors.darkGrey}  size= {40}></MaterialCommunityIcons>
+                    <MaterialCommunityIcons name ="close" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
                 </View>
             </View>
 
@@ -56,6 +56,9 @@ function Meeting(props) {
                     <View style = {styles.emojiIcon}>
                         <MaterialCommunityIcons name ="sticker-emoji" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
                     </View>
+                    <View style = {styles.sendIcon}>
+                        <MaterialCommunityIcons name ="send" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
+                    </View>
                 </View>
             </View>
         </SafeAreaView>
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
 
     toolbar: {
         width: '100%',
-        height: '8%',  
+        height: 50,  
         backgroundColor: colors.secondary,
         justifyContent: "center",
         alignItems: "center",
@@ -82,8 +85,20 @@ const styles = StyleSheet.create({
 
     chat: {
         width: '100%',
-        height: '47.7%',
+        height: 430,
         backgroundColor: colors.primary,
+        alignItems: "center",
+    },
+    
+    prompt: {
+        backgroundColor: colors.secondary,
+        width: '100%',
+        height: 70,
+        borderColor: colors.primary,
+        borderWidth: 5,
+        borderTopWidth: 10,
+        borderBottomWidth: 10,
+        justifyContent: "center",
         alignItems: "center",
     },
     
@@ -120,8 +135,14 @@ const styles = StyleSheet.create({
 
     emojiIcon :{
         alignSelf: "flex-end",
-        right: 10,
+        right: 35,
         bottom: 10,
+    },
+
+    sendIcon: {
+        alignSelf: "flex-end",
+        right: 10,
+        bottom: 30,
     },
 
     pip: {
@@ -132,18 +153,6 @@ const styles = StyleSheet.create({
         margin: 20,
         right:0,
         borderRadius: 15,
-    },
-
-    prompt: {
-        backgroundColor: colors.secondary,
-        width: '100%',
-        height: '10%',
-        borderColor: colors.primary,
-        borderWidth: 5,
-        borderTopWidth: 10,
-        borderBottomWidth: 10,
-        justifyContent: "center",
-        alignItems: "center",
     },
 
     promptText: {
