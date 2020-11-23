@@ -2,11 +2,11 @@ import React from 'react';
 import {Text, View, Image, ImageBackground, StyleSheet } from 'react-native';
 
 import colors from '../config/colors'
-
+import News from '../components/News'
 function MenuScreen(props) {
     return (
         <ImageBackground 
-        blurRadius = {5}
+        blurRadius = {3}
         style = {styles.background}
         source ={require('../assets/background1.jpg')}
         >
@@ -18,10 +18,14 @@ function MenuScreen(props) {
             <Image style = {styles.image} source ={require('../assets/profileAdrian.jpeg')}/>
         </View>
         <View style ={styles.newscard}>
-            <Text>This is where recent news would go</Text>
+            <News
+                title="Biden wins election"
+                date="11/22/20"
+                subTitle="Ex-Vice president Biden has been chosen to be the next president of the United States"
+            />
         </View>
         <View style ={styles.topicsCard}>
-            <Text>This is where Topics would go </Text>
+            <Text>This is where Topics would go Test</Text>
         </View>
         <View style = {styles.navBottom}>
             <Text>Menu Bar items would go here</Text>
