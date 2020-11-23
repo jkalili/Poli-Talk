@@ -9,5 +9,5 @@ import MenuScreen from "./app/screens/MenuScreen"
 import PostConversation from "./app/screens/PostConversation";
 
 export default function App() {
-  return <PostConversation/>;
+  return <Meeting/>;
 }

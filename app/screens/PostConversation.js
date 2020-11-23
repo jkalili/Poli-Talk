@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback,  Animated , Easing} from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback,  Animated , Easing, TextInput} from 'react-native';
 
 import { Feather,FontAwesome } from '@expo/vector-icons';
 import colors from '../config/colors'
@@ -28,8 +28,7 @@ import colors from '../config/colors'
         })
     }
 
-    render () {
-
+    render () { 
         let stars = []
         
         const animateScale = this.state.animation.interpolate ({
@@ -68,6 +67,13 @@ import colors from '../config/colors'
                 </View>
                 <Text style = {styles.header}>RATE YOUR CONVERSATION</Text>
                 <View style = {{flexDirection: "row"}}>{stars}</View>
+
+                <TextInput 
+                    style ={styles.input}
+                    placeholder = "leave some feedback!"
+                    placeholderTextColor = "rgba(255,255,255,0.7)"
+                />
+
                 <View style = {styles.submitButton}>
                     <Text style = {{fontWeight: "bold"}}>SUBMIT</Text>
                 </View>
@@ -83,7 +89,6 @@ import colors from '../config/colors'
             )
         }
     }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -112,7 +117,17 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 15,
-        margin: 20,
-    }
+        margin: 10,
+    },
+
+    input: {
+        height: 80,
+        width: 300,
+        backgroundColor: colors.lightGrey,
+        borderRadius: 15,
+        paddingHorizontal: 10,
+        paddingBottom: 45,
+        margin: 10,
+    },
 
 })

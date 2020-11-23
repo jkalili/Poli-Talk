@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, Text, SafeAreaView, TextInput } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -52,7 +52,11 @@ function Meeting(props) {
                 <Text style ={styles.chatText}>Cameron: Thanks for sharing!</Text>
                 <Text style ={styles.chatText2}>Me: Of Course!</Text>
                 <View style={styles.keyboard}>
-                    <Text style={styles.keyboardMessage}>Message Cameron</Text>
+                    <TextInput 
+                    style = {styles.input}
+                    placeholder = "enter message"
+                    placeholderTextColor = "rgba(255,255,255,0.7)"
+                    />
                     <View style = {styles.emojiIcon}>
                         <MaterialCommunityIcons name ="sticker-emoji" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
                     </View>
@@ -123,14 +127,14 @@ const styles = StyleSheet.create({
         backgroundColor: colors.secondary,
         borderRadius: 15,
         position: "absolute",
-        bottom: 15
+        bottom: 30,
     },
 
-    keyboardMessage: {
+    input: {
         color: colors.lightGrey,
         alignSelf: "flex-start",
+        paddingHorizontal: 10,
         top: 8,
-        left: 10,
     },
 
     emojiIcon :{
