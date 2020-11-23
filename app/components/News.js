@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import AppText from './AppText';
 
-function news({title, subTitle, date}) {
+function News({title, subTitle, date}) {
     return (
       <View>
           <AppText style = {styles.title}>{title}</AppText>
@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
         color:"#6e6969",
     },
     title:{
-        fontweight: '500',
+        fontWeight: '500',
     },
     subTitle:{
-        fontweight:'300',
+        fontWeight:'300',
     }
 })
-export default news;
+export default News;
