@@ -3,7 +3,7 @@ import { Image, ImageBackground, StyleSheet, View, Text, Button, TouchableOpacit
 
 import colors from '../config/colors'
 
-function Login(props) {
+function Login({navigation}) {
     return (
         <ImageBackground
             style={styles.background}
@@ -14,10 +14,10 @@ function Login(props) {
                 <Text style = {styles.text}>DEPOLARIZE THE POLITICAL SPACE</Text>
             </View>
 
-            <TouchableOpacity style = {styles.loginButton} onPress = {() => console.log("PRESSED")}>
+            <TouchableOpacity style = {styles.loginButton} onPress = {() => navigation.navigate('MenuScreen')}>
                 <Text style = {styles. buttonText}>LOG IN</Text>
             </TouchableOpacity>
-            <TouchableOpacity style = {styles.registerButton} onPress = {() => alert("In Beta Testing. Please Press 'Log In'")}>
+            <TouchableOpacity style = {styles.registerButton} onPress = {() => navigation.navigate('ComingSoon')}>
                 <Text style = {styles. buttonText}>SIGN UP</Text>
             </TouchableOpacity>
         </ImageBackground>

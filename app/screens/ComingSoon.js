@@ -5,16 +5,16 @@ import colors from '../config/colors'
 
 function ComingSoon(props) {
     return (
-        <TouchableWithoutFeedback style = {styles.logoContainer} onPress = {() => alert("Tap to leave")}>
+        <TouchableWithoutFeedback style = {styles.logoContainer}>
             <ImageBackground
             style={styles.background}
             blurRadius={3}
             source={require ('../assets/background2.jpg')}
             >
-                <TouchableOpacity onPress = {() => alert("Tap to exit")}>
+                <View>
                 <Text style = {styles.text} >UNDER CONSTRUCTION</Text>
-                <Text style = {styles.subtext}>TAP ANYWHERE TO EXIT</Text>
-                </TouchableOpacity>
+                <Text style = {styles.subtext}>TAP THE TOP LEFT TO EXIT</Text>
+                </View>
             </ImageBackground>
         </TouchableWithoutFeedback>
     );

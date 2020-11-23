@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, View, Text, SafeAreaView, TextInput } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, Text, SafeAreaView, TextInput, Button } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -31,9 +31,9 @@ function Meeting(props) {
                     <MaterialIcons name ="report" color = {colors.darkGrey}  size= {30}></MaterialIcons>
                 </View>
 
-                <View style = {styles.endCall}>
+                <Button style = {styles.endCall} onPress = {() => navigation.navigate('PostConversation')} >
                     <MaterialCommunityIcons name ="close" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
-                </View>
+                </Button>
             </View>
 
             <View style={styles.prompt}>
