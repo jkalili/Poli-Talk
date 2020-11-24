@@ -1,7 +1,4 @@
 import React from "react";
-import { View } from "react-native";
-
-
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 
@@ -11,10 +8,16 @@ import Login from "./app/screens/Login";
 import Meeting from "./app/screens/Meeting";
 import MenuScreen from "./app/screens/MenuScreen"
 import PostConversation from "./app/screens/PostConversation";
+import Report from "./app/screens/Report";
 
 const Stack = createStackNavigator()
 
 export default function App() { 
+  
+  // //for viewing one screen at a time
+  // return <Report/>
+  
+  //navigation done by Jason
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName = "Login" screenOptions = {{
@@ -49,6 +52,14 @@ export default function App() {
           component={PostConversation}
           options= {{ 
             title : "Feedback",
+          }}
+        />
+        <Stack.Screen  
+          name="Report" 
+          component={Report}
+          options= {{ 
+            title : "Report User",
+            headerShown: false,
           }}
         />
         <Stack.Screen  

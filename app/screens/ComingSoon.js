@@ -3,6 +3,7 @@ import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback } fro
 
 import colors from '../config/colors'
 
+//coming soon screen done by Jason
 function ComingSoon(props) {
     return (
         <TouchableWithoutFeedback style = {styles.logoContainer}>

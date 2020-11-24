@@ -5,6 +5,7 @@ import colors from '../config/colors'
 import News from '../components/News'
 import Topics from '../components/Topics'
 
+//menu screen done by Adrian
 function MenuScreen(props) {
     return (
         <ImageBackground 

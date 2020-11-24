@@ -4,11 +4,12 @@ import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback, Anim
 import { FontAwesome } from '@expo/vector-icons';
 import colors from '../config/colors'
 
+//post conversation screen done by Jason and Jeff
+
+//how to integrate navigator???
     const numStars = 5;
 
     export default class PostConversation extends React.Component {
-    
-        
     state = {
         rating:1,
         animation: new Animated.Value(1) 

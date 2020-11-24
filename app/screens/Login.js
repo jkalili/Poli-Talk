@@ -3,6 +3,7 @@ import { Image, ImageBackground, StyleSheet, View, Text, Button, TouchableOpacit
 
 import colors from '../config/colors'
 
+//login screen done by Jason
 function Login({navigation}) {
     return (
         <ImageBackground

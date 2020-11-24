@@ -6,8 +6,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import colors from '../config/colors';
 import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-function Meeting({navigation}) {
 
+//meeting screen done by Jason
+function Meeting({navigation}) {
     return (
         <View>
             <View>
@@ -15,25 +16,26 @@ function Meeting({navigation}) {
                     <Image style={styles.pip} source ={require('../assets/pip.jpg')}/>
                 </ImageBackground>
             </View>
-
+        
             <View style = {styles.toolbar}>
-                <TouchableOpacity style = {styles.mute} onPress= {() => alert("mic muted")}>
+                <TouchableOpacity style = {styles.mute}>
                     <MaterialCommunityIcons name ="microphone" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
                 </TouchableOpacity>
 
-                <TouchableOpacity style = {styles.camera} onPress= {() => alert("camera off")}>
+                <TouchableOpacity style = {styles.camera}>
                     <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
                 </TouchableOpacity>
 
-                <TouchableOpacity style = {styles.settings}>
+                {/* Added onPress to both TouchableOpacity and MaterialIcon because adding it on only materialIcons would not work on mobile, and the opposite would not work when running in web browser*/}
+                <TouchableOpacity style = {styles.settings} onPress = {() => navigation.navigate('ComingSoon')}>
                     <MaterialIcons name ="settings" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('ComingSoon')}></MaterialIcons>
                 </TouchableOpacity>
 
-                <TouchableOpacity style = {styles.report}>
-                    <MaterialIcons name ="report" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('PostConversation')}></MaterialIcons>
+                <TouchableOpacity style = {styles.report} onPress = {() => navigation.navigate('Report')}>
+                    <MaterialIcons name ="report" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('Report')}></MaterialIcons>
                 </TouchableOpacity>
 
-                <TouchableOpacity style = {styles.endCall}>
+                <TouchableOpacity style = {styles.endCall}  onPress = {() => navigation.navigate('PostConversation')}>
                     <MaterialCommunityIcons name ="close" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('PostConversation')}></MaterialCommunityIcons>
                 </TouchableOpacity>
             </View>
@@ -51,20 +53,18 @@ function Meeting({navigation}) {
             </View>
 
             <View style={styles.chat}>
-                <Text style ={styles.chatText}>Cameron: Thanks for sharing!</Text>
-                <Text style ={styles.chatText2}>Me: Of Course!</Text>
+                <Text style ={styles.chatText0}>Cameron: Thanks for sharing!</Text>
+                <Text style ={styles.chatText1}>Me: Of Course!</Text>
+                <Text style ={styles.chatTextDynamic}>Me: Of Course!</Text>
                 <View style={styles.keyboard}>
                     <TextInput 
                     style = {styles.input}
                     placeholder = "enter message"
                     placeholderTextColor = "rgba(255,255,255,0.7)"
                     />
-                    <View style = {styles.emojiIcon}>
-                        <MaterialCommunityIcons name ="sticker-emoji" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
-                    </View>
-                    <View style = {styles.sendIcon}>
+                    <TouchableOpacity style = {styles.sendIcon} >
                         <MaterialCommunityIcons name ="send" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
-                    </View>
+                    </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -108,19 +108,27 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     
-    chatText: {
-        color: colors.offWhite,
+    chatText0: {
+        color: colors.white,
         position: "absolute",
         alignSelf: "baseline",
-        margin: 5,
+        margin: 10,
     },
 
-    chatText2: {
-        color: colors.offWhite,
+    chatText1: {
+        color: colors.white,
         position: "absolute",
         alignSelf: "baseline",
-        margin: 5,
+        margin: 10,
         top: 25,
+    },
+
+    chatTextDynamic: {
+        color: colors.white,
+        position: "absolute",
+        alignSelf: "baseline",
+        margin: 10,
+        top: 50,
     },
 
     keyboard: {
@@ -139,16 +147,10 @@ const styles = StyleSheet.create({
         top: 8,
     },
 
-    emojiIcon :{
-        alignSelf: "flex-end",
-        right: 35,
-        bottom: 10,
-    },
-
     sendIcon: {
         alignSelf: "flex-end",
         right: 10,
-        bottom: 30,
+        bottom: 8,
     },
 
     pip: {
