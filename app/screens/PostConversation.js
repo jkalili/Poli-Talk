@@ -1,13 +1,14 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback,  Animated , Easing, TextInput} from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback, Animated , Easing, TextInput } from 'react-native';
 
-import { Feather,FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import colors from '../config/colors'
 
     const numStars = 5;
 
     export default class PostConversation extends React.Component {
-
+    
+        
     state = {
         rating:1,
         animation: new Animated.Value(1) 
@@ -62,9 +63,7 @@ import colors from '../config/colors'
 
         return (
             <ImageBackground style = {styles.container} source={require ('../assets/background2.jpg')} blurRadius={3}>
-                <View style ={styles.exit}>
-                    <Feather name ="x" color = {colors.darkGrey}  size= {30}></Feather>
-                </View>
+                
                 <Text style = {styles.header}>RATE YOUR CONVERSATION</Text>
                 <View style = {{flexDirection: "row"}}>{stars}</View>
 
@@ -74,7 +73,7 @@ import colors from '../config/colors'
                     placeholderTextColor = "rgba(255,255,255,0.7)"
                 />
 
-                <View style = {styles.submitButton}>
+                <View style = {styles.submitButton} onPress = {() => navigation.navigate('MenuScreen')}>
                     <Text style = {{fontWeight: "bold"}}>SUBMIT</Text>
                 </View>
             </ImageBackground>
@@ -102,12 +101,6 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         margin: 20,
         color: colors.darkGrey,
-    },
-    
-    exit: {
-        position: "absolute",
-        top: 50,
-        left: 30,
     },
 
     submitButton: {

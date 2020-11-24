@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback } from 'react-native';
 
 import colors from '../config/colors'
 
@@ -13,7 +13,7 @@ function ComingSoon(props) {
             >
                 <View>
                 <Text style = {styles.text} >UNDER CONSTRUCTION</Text>
-                <Text style = {styles.subtext}>TAP THE TOP LEFT TO EXIT</Text>
+                <Text style = {styles.subtext}>SWIPE OR TAP THE TOP LEFT TO EXIT</Text>
                 </View>
             </ImageBackground>
         </TouchableWithoutFeedback>

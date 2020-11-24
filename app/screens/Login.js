@@ -14,7 +14,7 @@ function Login({navigation}) {
                 <Text style = {styles.text}>DEPOLARIZE THE POLITICAL SPACE</Text>
             </View>
 
-            <TouchableOpacity style = {styles.loginButton} onPress = {() => navigation.navigate('MenuScreen')}>
+            <TouchableOpacity style = {styles.loginButton} onPress = {() => navigation.navigate('Meeting')}>
                 <Text style = {styles. buttonText}>LOG IN</Text>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.registerButton} onPress = {() => navigation.navigate('ComingSoon')}>

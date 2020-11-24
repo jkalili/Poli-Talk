@@ -1,13 +1,15 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, View, Text, SafeAreaView, TextInput, Button } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, Text, TextInput} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import colors from '../config/colors';
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-function Meeting(props) {
+function Meeting({navigation}) {
+
     return (
-        <SafeAreaView>
+        <View>
             <View>
                 <ImageBackground style={styles.image} source={require('../assets/cameron.png')}>
                     <Image style={styles.pip} source ={require('../assets/pip.jpg')}/>
@@ -15,25 +17,25 @@ function Meeting(props) {
             </View>
 
             <View style = {styles.toolbar}>
-                <View style = {styles.mute}>
+                <TouchableOpacity style = {styles.mute} onPress= {() => alert("mic muted")}>
                     <MaterialCommunityIcons name ="microphone" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
-                </View>
+                </TouchableOpacity>
 
-                <View style = {styles.camera}>
+                <TouchableOpacity style = {styles.camera} onPress= {() => alert("camera off")}>
                     <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
-                </View>
+                </TouchableOpacity>
 
-                <View style = {styles.settings}>
-                    <MaterialIcons name ="settings" color = {colors.darkGrey}  size= {30}></MaterialIcons>
-                </View>
+                <TouchableOpacity style = {styles.settings}>
+                    <MaterialIcons name ="settings" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('ComingSoon')}></MaterialIcons>
+                </TouchableOpacity>
 
-                <View style = {styles.report}>
-                    <MaterialIcons name ="report" color = {colors.darkGrey}  size= {30}></MaterialIcons>
-                </View>
+                <TouchableOpacity style = {styles.report}>
+                    <MaterialIcons name ="report" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('PostConversation')}></MaterialIcons>
+                </TouchableOpacity>
 
-                <Button style = {styles.endCall} onPress = {() => navigation.navigate('PostConversation')} >
-                    <MaterialCommunityIcons name ="close" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
-                </Button>
+                <TouchableOpacity style = {styles.endCall}>
+                    <MaterialCommunityIcons name ="close" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('PostConversation')}></MaterialCommunityIcons>
+                </TouchableOpacity>
             </View>
 
             <View style={styles.prompt}>
@@ -65,7 +67,7 @@ function Meeting(props) {
                     </View>
                 </View>
             </View>
-        </SafeAreaView>
+        </View>
     );
 }
 
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.secondary,
         borderRadius: 15,
         position: "absolute",
-        bottom: 30,
+        bottom: 80,
     },
 
     input: {
