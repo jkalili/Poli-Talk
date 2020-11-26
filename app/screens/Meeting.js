@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Image, ImageBackground, StyleSheet, View, Text, TextInput} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import colors from '../config/colors';
-import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 //meeting screen done by Jason
 function Meeting({navigation}) {
+    //for keyboard
+    const [chatMessage, setMessage] = useState('')
+    //for prompt
+    const [prompt, setPrompt] = useState('Abortion')
+
     return (
-        <View>
+        <View style = {styles.backColor}>
             <View>
                 <ImageBackground style={styles.image} source={require('../assets/cameron.png')}>
                     <Image style={styles.pip} source ={require('../assets/pip.jpg')}/>
@@ -23,7 +28,7 @@ function Meeting({navigation}) {
                 </TouchableOpacity>
 
                 <TouchableOpacity style = {styles.camera}>
-                    <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
+                    <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('ComingSoon')}></MaterialCommunityIcons>
                 </TouchableOpacity>
 
                 {/* Added onPress to both TouchableOpacity and MaterialIcon because adding it on only materialIcons would not work on mobile, and the opposite would not work when running in web browser*/}
@@ -41,26 +46,27 @@ function Meeting({navigation}) {
             </View>
 
             <View style={styles.prompt}>
-                <View style = {styles.next}>
-                    <MaterialIcons name ="navigate-next" color = {colors.darkGrey}  size= {25}></MaterialIcons>
-                </View>
-
-                <View style = {styles.before}>
-                    <MaterialIcons name ="navigate-before" color = {colors.darkGrey}  size= {25}></MaterialIcons>
-                </View>
-        
-                <Text style={styles.promptText}>Is abortion murder?</Text>
+                <TouchableOpacity style = {styles.next} onPress = {() => setPrompt('Same Sex Marriage')}>
+                    <MaterialIcons name ="navigate-next" color = {colors.darkGrey}  size= {35} onPress ={() => setPrompt('Same Sex Marriage')}></MaterialIcons>
+                </TouchableOpacity>
+                {/* Added onPress to both TouchableOpacity and MaterialIcon because adding it on only materialIcons would not work on mobile, and the opposite would not work when running in web browser*/}
+                <TouchableOpacity style = {styles.before} onPress = {() => setPrompt('Abortion')}>
+                    <MaterialIcons name ="navigate-before" color = {colors.darkGrey}  size= {35} onPress ={() => setPrompt('Abortion')}></MaterialIcons>
+                </TouchableOpacity>
+                {/* changeable text component */}
+                <Text style={styles.promptText}>{prompt}</Text>
             </View>
 
             <View style={styles.chat}>
-                <Text style ={styles.chatText0}>Cameron: Thanks for sharing!</Text>
-                <Text style ={styles.chatText1}>Me: Of Course!</Text>
-                <Text style ={styles.chatTextDynamic}>Me: Of Course!</Text>
+                <Text style ={styles.chatText0}>Me: Thanks for sharing!</Text>
+                <Text style ={styles.chatText1}>Cameron: Of Course!</Text>
+                <Text style ={styles.chatTextDynamic}>Me: {chatMessage}</Text>
                 <View style={styles.keyboard}>
                     <TextInput 
                     style = {styles.input}
                     placeholder = "enter message"
                     placeholderTextColor = "rgba(255,255,255,0.7)"
+                    onChangeText = {(val) => setMessage(val)} //functional keyboard
                     />
                     <TouchableOpacity style = {styles.sendIcon} >
                         <MaterialCommunityIcons name ="send" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
@@ -76,7 +82,13 @@ const styles = StyleSheet.create({
         borderTopEndRadius: 15,
         borderTopStartRadius: 15,
         width: '100%',
-        height: 300,
+        height: 350,
+    },
+
+    backColor : {
+        backgroundColor: colors.primary,
+        height: "100%",
+        width: "100%"
     },
 
     toolbar: {
@@ -137,7 +149,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.secondary,
         borderRadius: 15,
         position: "absolute",
-        bottom: 80,
+        bottom: 30,
     },
 
     input: {
@@ -145,6 +157,7 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         paddingHorizontal: 10,
         top: 8,
+        width: "90%"
     },
 
     sendIcon: {
@@ -161,6 +174,7 @@ const styles = StyleSheet.create({
         margin: 20,
         right:0,
         borderRadius: 15,
+        top: 25
     },
 
     promptText: {
@@ -170,35 +184,16 @@ const styles = StyleSheet.create({
 
     next: {
         position: "absolute",
-        alignSelf: "flex-end",
+        top: -15,
         margin: 10,
-        right: 0,
+        left: 120,
     },
 
     before: {
         position: "absolute",
-        alignSelf: "flex-start",
         margin: 10,
-    },
-
-    mute: {
-        
-    },
-
-    camera: {
-
-    },
-
-    settings: {
-
-    },
-
-    report: {
-   
-    },
-
-    endCall: {
-
+        right: 120,
+        top: -15
     },
 })
 

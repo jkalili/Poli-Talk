@@ -14,8 +14,8 @@ const Stack = createStackNavigator()
 
 export default function App() { 
   
-  // //for viewing one screen at a time
-  // return <Report/>
+  //for viewing one screen at a time
+  return <Meeting/>
   
   //navigation done by Jason
   return (

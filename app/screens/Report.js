@@ -45,7 +45,7 @@ function Report({navigation}) {
 
             <View style = {styles.logoContainer}>
                 <Image resizeMode="contain" style = {styles.logo} source={require('../assets/LogoGray.png')}/>
-                <Text style = {styles.textLogo}>DEPOLARIZE THE POLITICAL SPACE</Text>
+                <Text style = {styles.textLogo}>POLITALK 2020©</Text>
             </View>
         </ImageBackground>
     );
