@@ -6,10 +6,7 @@ function News({title, subTitle, date, publisher}) {
       <View style ={styles.container}>
           <Text style = {styles.title}>{title}</Text>
           <Text style = {styles.date}>{publisher} {date}</Text>
-          <Text style = {styles.subTitle}>{subTitle}</Text>
       </View>
-      
-      
     );
 }
 const styles = StyleSheet.create({
@@ -18,15 +15,13 @@ const styles = StyleSheet.create({
     },
     date:{
         color:"#6e6969",
+        marginBottom:10
     },
     title:{
         fontWeight: '500',
-        marginBottom:3,
+        marginTop:10,
+        marginBottom:5,
+        marginHorizontal:5
     },
-    subTitle:{
-        fontWeight:'300',
-        margin: 7,
-        marginTop:4
-    }
 })
 export default News;
