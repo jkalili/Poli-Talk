@@ -5,13 +5,14 @@ import colors from '../config/colors'
 import News from '../components/News'
 import Topics from '../components/Topics'
 
-function MenuScreen(props) {
+function MenuScreen({navigation}) {
     const [switchElectionEnabled, switchElection] = React.useState(false);
     const [switchCovidEnabled, switchCovid] = React.useState(false);
     const [switchBLMEnabled, switchBLM] = React.useState(false);
     const [switchGunControlEnabled, switchGunControl] = React.useState(false);
     const [switchSameSexEnabled, switchSameSex] = React.useState(false);
-    const [message, setMessage] = useState("Searching for partner");
+    
+
     return (
         <ImageBackground 
         blurRadius = {3}
@@ -34,6 +35,7 @@ function MenuScreen(props) {
                 title="Trump pardons Michael Flynn"
                 publisher="LA Times"
                 date="11/27/20"
+                
             />
             <News
                 title="Top Black Friday Deals"
@@ -76,9 +78,10 @@ function MenuScreen(props) {
                 date="11/12/20"
             />
     
-        <Button title="Show more" 
+        <Button title="SHOW MORE" 
         color="#6e6969"
-        onPress={() => Alert.alert("Under construction")}
+        style = {{fontWeight: "bold"}}
+        onPress = {() => navigation.navigate('ComingSoon')}
         />
         </View>
         <View style ={styles.topicsCard}>
@@ -129,7 +132,7 @@ function MenuScreen(props) {
                     style={styles.switchStyle}
                     onValueChange={(value) => switchSameSex(value)}
                 /> 
-        <Button title="Search" color="grey"/>
+        <Button title="MEET" color="grey" onPress = {() => navigation.navigate('Meeting')}/>
         </View>
         <View style = {styles.friendsListCard}>
         <Text style ={styles.title}>Friends Online (3/14)</Text>

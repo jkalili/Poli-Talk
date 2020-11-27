@@ -1,32 +1,31 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, Linking} from 'react-native';
+
 
 function News({title, subTitle, date, publisher}) {
     return (
-      <View style ={styles.container}>
-          <Text style = {styles.title}>{title}</Text>
-          <Text style = {styles.date}>{publisher} {date}</Text>
-          <Text style = {styles.subTitle}>{subTitle}</Text>
+      <View style ={styles.container} onPress={() => Linking.openURL('http://google.com')}>
+          <Text style = {styles.title} onPress={() => Linking.openURL('http://google.com')}>{title}</Text>
+          <Text style = {styles.date} onPress={() => Linking.openURL('http://google.com')}>{publisher} {date}</Text>
       </View>
-      
-      
     );
 }
 const styles = StyleSheet.create({
     container:{
-        alignItems:"center",
+        textAlign:"center",
+        alignContent: "center",
+        alignItems: "center",
+        justifyContent: "center"
     },
     date:{
         color:"#6e6969",
+        marginBottom:10
     },
     title:{
         fontWeight: '500',
-        marginBottom:3,
+        marginTop:10,
+        marginBottom:5,
+        marginHorizontal:5,
     },
-    subTitle:{
-        fontWeight:'300',
-        margin: 7,
-        marginTop:4
-    }
 })
 export default News;

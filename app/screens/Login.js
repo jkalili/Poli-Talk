@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
+import { Image, ImageBackground, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 
 import colors from '../config/colors'
 
@@ -15,7 +15,7 @@ function Login({navigation}) {
                 <Text style = {styles.text}>DEPOLARIZE THE POLITICAL SPACE</Text>
             </View>
 
-            <TouchableOpacity style = {styles.loginButton} onPress = {() => navigation.navigate('Meeting')}>
+            <TouchableOpacity style = {styles.loginButton} onPress = {() => navigation.navigate('MenuScreen')}>
                 <Text style = {styles. buttonText}>LOG IN</Text>
             </TouchableOpacity>
             <TouchableOpacity style = {styles.registerButton} onPress = {() => navigation.navigate('ComingSoon')}>
