@@ -13,22 +13,37 @@ function Meeting({navigation}) {
     const [chatMessage, setMessage] = useState('')
     //for prompt
     const [prompt, setPrompt] = useState('Abortion')
-
+    
+    const [micColor, setMicColor] = useState('#2f2f2f')
+    const [micStatus, setMicStatus] = useState("microphone")
+    
+    
+    const [camColor, setCamColor] = useState('#2f2f2f')
+    const [camStatus, setCamStatus] = useState("camera")
+    
     return (
         <View style = {styles.backColor}>
             <View>
                 <ImageBackground style={styles.image} source={require('../assets/cameron.png')}>
                     <Image style={styles.pip} source ={require('../assets/pip.jpg')}/>
-                </ImageBackground>
+                </ImageBackground> 
             </View>
         
             <View style = {styles.toolbar}>
-                <TouchableOpacity style = {styles.mute}>
-                    <MaterialCommunityIcons name ="microphone" color = {colors.darkGrey}  size= {30}></MaterialCommunityIcons>
+
+
+
+                {/* Added onPress to both TouchableOpacity and MaterialIcon because adding it on only materialIcons would not work on mobile, and the opposite would not work when running in web browser*/}
+                <TouchableOpacity style = {styles.mute} onPress = {() => setMicColor('#c80815') & setMicStatus('microphone-off')}>
+                    <MaterialCommunityIcons name = {micStatus} color = {micColor}  size= {30} onPress = {() => setMicColor('#c80815') & setMicStatus('microphone-off')}></MaterialCommunityIcons>
                 </TouchableOpacity>
 
-                <TouchableOpacity style = {styles.camera}>
-                    <MaterialCommunityIcons name ="camera" color = {colors.darkGrey}  size= {30} onPress = {() => navigation.navigate('ComingSoon')}></MaterialCommunityIcons>
+
+
+
+
+                <TouchableOpacity style = {styles.camera} onPress = {() => setCamColor('#c80815') & setCamStatus('camera-off') & alert('Action Not Yet Implemented')}>
+                    <MaterialCommunityIcons name = {camStatus} color = {camColor}  size= {30} onPress = {() => setCamColor('#c80815') & setCamStatus('camera-off') & alert('Action Not Yet Implemented')}></MaterialCommunityIcons>
                 </TouchableOpacity>
 
                 {/* Added onPress to both TouchableOpacity and MaterialIcon because adding it on only materialIcons would not work on mobile, and the opposite would not work when running in web browser*/}
@@ -68,8 +83,8 @@ function Meeting({navigation}) {
                     placeholderTextColor = "rgba(255,255,255,0.7)"
                     onChangeText = {(val) => setMessage(val)} //functional keyboard
                     />
-                    <TouchableOpacity style = {styles.sendIcon} >
-                        <MaterialCommunityIcons name ="send" color = {colors.lightGrey}  size= {20}></MaterialCommunityIcons>
+                    <TouchableOpacity style = {styles.sendIcon} onPress = {() => setMessage("Example message sent...")}>
+                        <MaterialCommunityIcons name ="send" color = {colors.lightGrey}  size= {20} onPress = {() => setMessage("Example message sent...")}></MaterialCommunityIcons>
                     </TouchableOpacity>
                 </View>
             </View>

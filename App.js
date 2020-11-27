@@ -14,8 +14,8 @@ const Stack = createStackNavigator()
 
 export default function App() { 
   
-  //for viewing one screen at a time
-  return <Meeting/>
+  // //for viewing one screen at a time
+  // return <Meeting/>
   
   //navigation done by Jason
   return (
@@ -37,7 +37,8 @@ export default function App() {
           component={MenuScreen}
           options= {{ 
             headerStyle: { backgroundColor: '#d3d3d3'},
-            title : "Dashboard"
+            title : "Dashboard",
+            headerShown: false, 
           }}
         />
         <Stack.Screen  
@@ -66,7 +67,8 @@ export default function App() {
           name="Meeting" 
           component={Meeting}
           options= {{ 
-            headerStyle: { backgroundColor: "#4c4c4c"}
+            headerStyle: { backgroundColor: "#4c4c4c"},
+            headerShown: false,
           }}
         />
         <Stack.Screen  
