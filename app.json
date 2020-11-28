@@ -19,9 +19,9 @@
     "ios": {
       "supportsTablet": false
     },
-    "android": {
-    },
-    "web": {
-    }
+    "android": {},
+    "web": {},
+    "description": "A mobile app built on React Native to depolarize political beliefs by chatting with students who hold values semi-similar to your own.\n\n",
+    "githubUrl": "https://github.com/jkalili/PoliTalk"
   }
 }
