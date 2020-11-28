@@ -22,10 +22,13 @@ function MenuScreen({navigation}) {
         <View style = {styles.logo}>
             <Image style = {styles.image} resizeMode="contain" source ={require('../assets/LogoGray.png')}/>
         </View>
-        <TouchableOpacity onPress={()=> Alert.alert("Signout", "",[
+        <TouchableOpacity onPress={()=> {
+            console.log("clicked")
+            Alert.alert("Signout", "",[
             {text: "Cancel"},
             {text: "Confirm"},
-        ])} style = {styles.profile}>
+        ])
+        }} style = {styles.profile}>
             <Image style = {styles.image} source ={require('../assets/profileAdrian.jpeg')}/>
         </TouchableOpacity>
         <View style ={styles.newscard}>

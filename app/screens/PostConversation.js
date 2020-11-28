@@ -1,18 +1,21 @@
 import React from 'react';
-import { ImageBackground, StyleSheet, View, Text, TouchableWithoutFeedback, Animated , Easing, TextInput } from 'react-native';
+import { ImageBackground, StyleSheet, View, Text, TouchableOpacity, TouchableWithoutFeedback, Animated , Easing, TextInput } from 'react-native';
 
-import { FontAwesome } from '@expo/vector-icons';
 import colors from '../config/colors'
-
+import Star from '../components/Star'
 //post conversation screen done by Jason and Jeff
 
 //how to integrate navigator???
     const numStars = 5;
 
     export default class PostConversation extends React.Component {
-    state = {
+    constructor(props) {
+        super(props)
+        
+    this.state = {
         rating:1,
         animation: new Animated.Value(1) 
+    }
     }
 
     rate = star => {
@@ -30,7 +33,8 @@ import colors from '../config/colors'
         })
     }
 
-    render () { 
+    render () {
+        
         let stars = []
         
         const animateScale = this.state.animation.interpolate ({
@@ -73,21 +77,16 @@ import colors from '../config/colors'
                     placeholder = "leave some feedback!"
                     placeholderTextColor = "rgba(255,255,255,0.7)"
                 />
-
-                <View style = {styles.submitButton} onPress = {() => navigation.navigate('MenuScreen')}>
+                <TouchableOpacity onPress = {() => {
+                    this.props.navigation.navigate('MenuScreen')}
+                }>
+                <View style = {styles.submitButton} >
                     <Text style = {{fontWeight: "bold"}}>SUBMIT</Text>
                 </View>
+                </TouchableOpacity>
             </ImageBackground>
         );
     }
-    }
-
-    class Star extends React.Component {
-        render () {
-            return (
-                <FontAwesome name={this.props.filled === true ? "star" : "star-o"} color = "#4c4c4c" size= {32} style ={{marginHorizontal: 6}}/>
-            )
-        }
     }
 
 const styles = StyleSheet.create({
