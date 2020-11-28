@@ -16,8 +16,8 @@ function Prompt({ title, subTitle, onPress }) {
           style={{ width: 300, height: 40 }}
           minimumValue={0}
           maximumValue={1}
-          minimumTrackTintColor="#FFFFFF"
-          maximumTrackTintColor="#000000"
+          maximumTrackTintColor="tomato"
+          minimumTrackTintColor="dodgerblue"
         />
       </View>
       <View style={styles.markerContainer}>
