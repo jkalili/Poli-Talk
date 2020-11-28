@@ -52,48 +52,59 @@ function MenuScreen({ navigation }) {
       </TouchableOpacity>
       <View style={styles.newscard}>
         <Text style={styles.title}>Recent News</Text>
-
         <News
           title="Trump pardons Michael Flynn"
           publisher="LA Times"
           date="11/27/20"
+          link = "https://www.latimes.com/politics/story/2020-11-25/trump-pardons-former-aide-michael-flynn"
         />
         <News
           title="Top Black Friday Deals"
           publisher="BuzzFeed"
           date="11/27/20"
+          link = "https://www.buzzfeed.com/melanie_aman/best-black-friday-deals"
         />
         <News
           title="Surprising Grammy Nominations"
           publisher="LA times"
           date="11/24/20"
+          link = "https://www.latimes.com/entertainment-arts/music/story/2020-11-24/2021-grammys-nominations-snubs-surprises-weeknd"
         />
         <News
           title="China and India tensions rise"
           publisher="CNN"
           date="11/24/20"
+          link ="https://www.cnn.com/2020/11/24/asia/china-india-bhutan-doklam-intl-hnk/index.html"
         />
         <News
           title="Gov. Newsom Quarantining"
           publisher="NPR"
           date="11/23/20"
+          link = "https://www.npr.org/sections/coronavirus-live-updates/2020/11/23/937926051/california-gov-gavin-newsom-family-quarantining-after-3-kids-exposed-to-coronavi"
         />
         <News
           title="Trump refuses to Concede"
           publisher="FOX News"
-          date="11/23/20"
+          date="11/21/20"
+          link = "https://www.foxnews.com/transcript/trump-refuses-to-concede-election-as-legal-battles-over-votes-continue"
         />
         <News
           title="Ken Jennings new Jeopardy Host"
           publisher="The Hill"
           date="11/23/20"
+          link = "https://thehill.com/blogs/in-the-know/in-the-know/527283-ken-jennings-named-interim-jeopardy-host-after-death-of-alex"
         />
         <News
-          title="Economic recession likely"
+          title="Unemployment peaks for the first time in a month"
           publisher="CNN"
-          date="11/20/20"
+          date="11/29/20"
+          link = "https://www.cnn.com/2020/11/19/economy/unemployment-benefits-coronavirus/index.html"
         />
-        <News title="Biden wins election" publisher="AP News" date="11/12/20" />
+        <News title="Biden wins election" 
+        publisher="AP News" 
+        date="11/7/20"
+        link = "https://apnews.com/article/joe-biden-wins-white-house-ap-fd58df73aa677acb74fce2a69adb71f9"
+        />
 
         <Button
           title="SHOW MORE"
