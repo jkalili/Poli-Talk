@@ -9,6 +9,7 @@ import Meeting from "../screens/Meeting";
 import Report from "../screens/Report";
 import PostConversation from "../screens/PostConversation";
 import CompassWelcome from "../screens/CompassWelcome";
+import CTscore from "../screens/CTscore";
 
 const Stack = createStackNavigator();
 
@@ -87,6 +88,15 @@ const AppNavigator = () => (
       component={CompassWelcome}
       options={{
         title: "Compass Welcome",
+        headerShown: false,
+      }}
+    />
+
+    <Stack.Screen
+      name="CTscore"
+      component={CTscore}
+      options={{
+        title: "CTscore",
         headerShown: false,
       }}
     />

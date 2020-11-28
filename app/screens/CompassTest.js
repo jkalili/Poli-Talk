@@ -6,11 +6,11 @@ import {
   Image,
   TouchableOpacity,
   Alert,
+  Text,
 } from "react-native";
 import colors from "../config/colors";
 
 import Prompt from "../components/Prompt";
-import CompassButton from "../components/CompassButton";
 
 function CompassTest({ navigation }) {
   return (
@@ -67,9 +67,13 @@ function CompassTest({ navigation }) {
           subTitle="Our race has many superior qualities, compared with other races."
         />
       </View>
-      <View style={styles.submitContainer}>
-        <CompassButton title="Submit" />
-      </View>
+
+      <TouchableOpacity
+        style={styles.submitContainer}
+        onPress={() => navigation.navigate("CTscore")}
+      >
+        <Text style={styles.submit}>SUBMIT</Text>
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
@@ -87,13 +91,10 @@ const styles = StyleSheet.create({
   },
   forum: {
     position: "absolute",
-    borderWidth: 10,
     borderRadius: 35,
-    borderBottomWidth: 64,
-    borderColor: colors.white,
-    backgroundColor: colors.black,
+    backgroundColor: colors.darkGrey,
     margin: 10,
-    height: "85%",
+    height: "70%",
     width: "95%",
     top: "13%",
   },
@@ -115,7 +116,18 @@ const styles = StyleSheet.create({
   submitContainer: {
     margin: "5%",
     justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 15,
     width: "90%",
+    height: 50,
+    bottom: 160,
+    backgroundColor: colors.lightGrey,
+  },
+  submit: {
+    textAlign: "center",
+    color: colors.darkGrey,
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
 
