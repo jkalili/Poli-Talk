@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     borderRadius: 35,
     backgroundColor: colors.darkGrey,
     margin: 10,
-    height: "70%",
+    height: "75%",
     width: "95%",
     top: "13%",
   },
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     width: "90%",
     height: 50,
-    bottom: 160,
+    bottom: 110,
     backgroundColor: colors.lightGrey,
   },
   submit: {

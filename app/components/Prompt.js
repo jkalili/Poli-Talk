@@ -1,4 +1,6 @@
 import React from "react";
+import Slider from "@react-native-community/slider";
+
 import {
   View,
   StyleSheet,
@@ -14,21 +16,34 @@ function Prompt({ title, subTitle, onPress }) {
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subTitle}>{subTitle}</Text>
       <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.text}>DISAGREE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-          <Text style={styles.text}>NEUTRAL</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-          <Text style={styles.text}>AGREE</Text>
-        </TouchableOpacity>
+        <Slider
+          style={{ width: 300, height: 40 }}
+          minimumValue={0}
+          maximumValue={1}
+          minimumTrackTintColor="#FFFFFF"
+          maximumTrackTintColor="#000000"
+        />
+      </View>
+      <View style={styles.markerContainer}>
+        <Text style={styles.marker}>DISAGREE</Text>
+        <Text style={styles.marker}>NOT SURE</Text>
+        <Text style={styles.marker}>AGREE</Text>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  markerContainer: {
+    width: "120%",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
+
+  marker: {
+    color: colors.secondary,
+  },
+
   container: {
     alignItems: "center",
   },
@@ -38,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     margin: 7,
     marginTop: 4,
-    color: colors.white,
+    color: colors.lightGrey,
     fontStyle: "italic",
     textAlign: "center",
   },
@@ -46,21 +61,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "700",
     marginTop: 15,
-    color: colors.white,
-  },
-
-  button: {
-    width: "22%",
-    height: 35,
-    backgroundColor: colors.lightGrey,
-    borderRadius: 11,
-    borderColor: colors.primary,
-    justifyContent: "center",
-    alignItems: "center",
-    borderWidth: 5,
-    marginVertical: 5,
-    marginHorizontal: 25,
-    flexDirection: "row",
+    color: colors.lightGrey,
   },
 
   text: {
