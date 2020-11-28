@@ -6,12 +6,12 @@ import {
   View,
   Text,
   TextInput,
+  TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 //meeting screen done by Jason
 function Meeting({ navigation }) {
@@ -276,16 +276,14 @@ const styles = StyleSheet.create({
 
   next: {
     position: "absolute",
-    top: -15,
     margin: 10,
-    left: 120,
+    right: 30,
   },
 
   before: {
     position: "absolute",
     margin: 10,
-    right: 120,
-    top: -15,
+    left: 30,
   },
 });
 

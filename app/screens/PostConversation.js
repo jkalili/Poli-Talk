@@ -13,9 +13,7 @@ import {
 
 import colors from "../config/colors";
 import Star from "../components/Star";
-//post conversation screen done by Jason and Jeff
 
-//how to integrate navigator???
 const numStars = 5;
 
 export default class PostConversation extends React.Component {

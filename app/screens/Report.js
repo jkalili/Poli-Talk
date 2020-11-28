@@ -7,17 +7,21 @@ import {
   Text,
   Switch,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
 
 import colors from "../config/colors";
 
 //report screen done by Jason
 function Report({ navigation }) {
-  const [isSwitchEnabled0, setSwitch0] = React.useState(false);
-  const [isSwitchEnabled1, setSwitch1] = React.useState(false);
-  const [isSwitchEnabled2, setSwitch2] = React.useState(false);
-  const [isSwitchEnabled3, setSwitch3] = React.useState(false);
+  const [isSwitchEnabledHateSpeech, setSwitchHateSpeech] = React.useState(
+    false
+  );
+  const [isSwitchEnabledNudity, setSwitchNudity] = React.useState(false);
+  const [isSwitchEnabledViolence, setSwitchViolence] = React.useState(false);
+  const [isSwitchEnabledHarassment, setSwitchHarassment] = React.useState(
+    false
+  );
 
   return (
     <ImageBackground
@@ -31,29 +35,29 @@ function Report({ navigation }) {
       <View style={styles.reportOption}>
         <Text>Hate Speech</Text>
         <Switch
-          value={isSwitchEnabled0}
-          onValueChange={(value) => setSwitch0(value)}
+          value={isSwitchEnabledHateSpeech}
+          onValueChange={(value) => setSwitchHateSpeech(value)}
         />
 
         <Text>Nudity or Sexual Content</Text>
         <Switch
           style={styles.switch}
-          value={isSwitchEnabled1}
-          onValueChange={(value) => setSwitch1(value)}
+          value={isSwitchEnabledNudity}
+          onValueChange={(value) => setSwitchNudity(value)}
         />
 
         <Text>Violence</Text>
         <Switch
           style={styles.switch}
-          value={isSwitchEnabled2}
-          onValueChange={(value) => setSwitch2(value)}
+          value={isSwitchEnabledViolence}
+          onValueChange={(value) => setSwitchViolence(value)}
         />
 
         <Text>Harassment</Text>
         <Switch
           style={styles.switch}
-          value={isSwitchEnabled3}
-          onValueChange={(value) => setSwitch3(value)}
+          value={isSwitchEnabledHarassment}
+          onValueChange={(value) => setSwitchHarassment(value)}
         />
       </View>
       <TextInput

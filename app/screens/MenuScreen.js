@@ -38,7 +38,10 @@ function MenuScreen({ navigation }) {
       <TouchableOpacity
         onPress={() => {
           console.log("clicked");
-          Alert.alert("Signout", "", [{ text: "Cancel" }, { text: "Confirm" }]);
+          Alert.alert("Signout", "", [
+            { text: "Cancel" },
+            { text: "Confirm", onPress: () => navigation.navigate("Login") },
+          ]);
         }}
         style={styles.profile}
       >
@@ -94,7 +97,7 @@ function MenuScreen({ navigation }) {
 
         <Button
           title="SHOW MORE"
-          color="#6e6969"
+          color="green"
           style={{ fontWeight: "bold" }}
           onPress={() => navigation.navigate("ComingSoon")}
         />
@@ -140,9 +143,12 @@ function MenuScreen({ navigation }) {
           style={styles.switchStyle}
           onValueChange={(value) => switchSameSex(value)}
         />
+
+        <View style={styles.buttonSpacer}></View>
+
         <Button
           title="MEET"
-          color="grey"
+          color="green"
           onPress={() => navigation.navigate("Meeting")}
         />
       </View>
@@ -151,7 +157,7 @@ function MenuScreen({ navigation }) {
         onPress={() => navigation.navigate("CompassTest")}
         style={styles.friendsListCard}
       >
-        <Text style={styles.title}>Political Compass Test</Text>
+        <Text style={styles.title}>Compass Test</Text>
         <View>
           <Text style={styles.scoreHeader}>Your Current Score:</Text>
           <Text style={styles.scoreSubHeader}>TAP TO TAKE AGAIN</Text>
@@ -181,16 +187,18 @@ const styles = StyleSheet.create({
   scoreSubHeader: {
     alignSelf: "center",
     fontSize: 10,
+    color: "green",
   },
   score: {
     alignSelf: "center",
     fontSize: 40,
     marginVertical: 2,
+    color: "#708090",
   },
   newscard: {
     position: "absolute",
     borderRadius: 15,
-    backgroundColor: colors.offWhite,
+    backgroundColor: colors.white,
     marginLeft: "5%",
     height: "80%",
     width: "42%",
@@ -200,7 +208,7 @@ const styles = StyleSheet.create({
   topicsCard: {
     position: "absolute",
     borderRadius: 15,
-    backgroundColor: colors.offWhite,
+    backgroundColor: colors.white,
     marginLeft: 20,
     height: "57%",
     width: "43%",
@@ -213,7 +221,7 @@ const styles = StyleSheet.create({
   friendsListCard: {
     position: "absolute",
     borderRadius: 15,
-    backgroundColor: colors.offWhite,
+    backgroundColor: colors.white,
     marginLeft: 20,
     height: "22%",
     width: "43%",
@@ -241,6 +249,13 @@ const styles = StyleSheet.create({
     transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }],
     marginVertical: 3,
   },
+
+  buttonSpacer: {
+    height: 3,
+    width: "100%",
+    margin: 10,
+  },
+
   title: {
     top: 10,
     fontSize: 20,
