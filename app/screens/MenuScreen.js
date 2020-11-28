@@ -47,7 +47,7 @@ function MenuScreen({ navigation }) {
       >
         <Image
           style={styles.image}
-          source={require("../assets/profileAdrian.jpeg")}
+          source={require("../assets/cristianprofile.jpg")}
         />
       </TouchableOpacity>
       <View style={styles.newscard}>
