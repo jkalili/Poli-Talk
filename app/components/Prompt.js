@@ -14,6 +14,7 @@ function Prompt({ title, subTitle, onPress }) {
       <View style={{ flexDirection: "row" }}>
         <Slider
           style={{ width: 300, height: 40 }}
+          value={0.5}
           minimumValue={0}
           maximumValue={1}
           maximumTrackTintColor="tomato"
