@@ -1,5 +1,4 @@
 //By Cristian Ornelas & Jason Kalili(slider)
-
 import React from "react";
 import Slider from "@react-native-community/slider";
 

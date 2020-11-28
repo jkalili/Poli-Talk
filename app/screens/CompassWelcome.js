@@ -11,20 +11,21 @@ import {
 } from "react-native";
 import AppButton from "../components/AppButton";
 import { MaterialIcons } from "@expo/vector-icons";
+import colors from "../config/colors";
 
 function CompassWelcome({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/background1.jpg")}
+      source={require("../assets/background2.jpg")}
     >
       <View style={styles.logoContainer}>
-        <Text style={styles.tagline}>POLITICAL COMPASS TEST</Text>
         <Image
           style={styles.logo}
           resizeMode="contain"
           source={require("../assets/LogoGray.png")}
         />
+        <Text style={styles.tagline}>POLITICAL COMPASS TEST</Text>
       </View>
 
       <View style={styles.buttonsContainer}>
@@ -57,7 +58,7 @@ function CompassWelcome({ navigation }) {
           )
         }
       >
-        <MaterialIcons name={"info-outline"} size={25} color={"white"} />
+        <MaterialIcons name={"info-outline"} size={25} color={"gray"} />
       </TouchableOpacity>
     </ImageBackground>
   );
@@ -73,14 +74,15 @@ const styles = StyleSheet.create({
     padding: 5,
     width: "65%",
     justifyContent: "center",
+    bottom: 140,
   },
   logo: {
-    width: 180,
+    width: 150,
     height: 120,
   },
   logoContainer: {
     position: "absolute",
-    top: 70,
+    top: 250,
     alignItems: "center",
   },
   tagline: {
@@ -88,11 +90,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     paddingVertical: 30,
     textAlign: "center",
+    color: colors.darkGrey,
   },
   info: {
     position: "absolute",
-    bottom: 30,
-    right: 20,
+    bottom: 40,
+    right: 30,
   },
 });
 

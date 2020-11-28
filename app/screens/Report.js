@@ -69,7 +69,7 @@ function Report({ navigation }) {
 
       <TouchableOpacity
         style={styles.sumbitButton}
-        onPress={() => navigation.navigate("MenuScreen")}
+        onPress={() => navigation.navigate("Meeting")}
       >
         <Text style={styles.buttonText}>SUBMIT</Text>
       </TouchableOpacity>

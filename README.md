@@ -4,7 +4,7 @@ A mobile app built on React Native to depolarize political beliefs by chatting w
 
 Credits:
 Coming Soon - Jason
-Compass Test - Cristian
+Compass Test Screens - Cristian & Jason
 Login - Jason
 Meeting - Jason
 Menu/Dashboard - Adrian
@@ -18,4 +18,5 @@ Basic Structure - Marco Berardini
 Navigation Structure - https://reactnavigation.org/docs/getting-started - React Navigation
 Star Rating System - https://www.youtube.com/watch?v=iOF3C9UnsWg - ResignIntoCode
 Vector Icons - https://icons.expo.fyi/ - Expo
+Slider - https://github.com/callstack/react-native-slider
 Logo - Jason Kalili
