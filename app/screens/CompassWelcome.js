@@ -1,68 +1,98 @@
 import React from "react";
-import {Image, ImageBackground, StyleSheet, Text, TouchableWithoutFeedback, View, } from 'react-native';
-import AppButton from '../components/AppButton';
-import colors from "../config/colors";
-import {MaterialCommunityIcons} from '@expo/vector-icons';
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Alert,
+  Image,
+} from "react-native";
+import AppButton from "../components/AppButton";
+import { MaterialIcons } from "@expo/vector-icons";
 
-function WelcomeScreen(props) {
-    return (
+function CompassWelcome({ navigation }) {
+  return (
     <ImageBackground
-        style = {styles.background}        
-        source={require("../assets/welcome.jpg")} 
+      style={styles.background}
+      source={require("../assets/background1.jpg")}
     >
-        <View style={styles.logoContainer}>
-            {/* <Image style={styles.logo} source={require("../assets/logo.png")} /> */}
-            <Text style={styles.tagline}>Politcal Compass Test</Text>
-        </View>
+      <View style={styles.logoContainer}>
+        <Text style={styles.tagline}>POLITICAL COMPASS TEST</Text>
+        <Image
+          style={styles.logo}
+          resizeMode="contain"
+          source={require("../assets/LogoGray.png")}
+        />
+      </View>
 
-        <View style={styles.buttonsContainer}>
-            
-        <AppButton title ="Begin Test" />
-        <AppButton title = "Go Back "   />
-
-        <Text style={styles.below}> *Please Notice Important Message* </Text>
-            
-        </View>    
-        </ImageBackground>
-         
-    );
+      <View style={styles.buttonsContainer}>
+        <AppButton
+          title="BEGIN"
+          onPress={() => {
+            Alert.alert(
+              "Notice",
+              "Please respond honestly and only choose one answer for each question. You may take this evaluation again at any time. Thanks for using PoliTalk.",
+              [
+                { text: "Cancel" },
+                {
+                  text: "Begin",
+                  onPress: () => navigation.navigate("CompassTest"),
+                },
+              ]
+            );
+          }}
+        />
+        <AppButton
+          title="BACK"
+          onPress={() => navigation.navigate("MenuScreen")}
+        />
+      </View>
+      <TouchableOpacity
+        style={styles.info}
+        onPress={() =>
+          alert(
+            "Contrary to the name, this is not a real test - nor a quiz. This is simply a way to gauge where you personally stand on the political spectrum. This information will not be accessible to anyone."
+          )
+        }
+      >
+        <MaterialIcons name={"info-outline"} size={25} color={"white"} />
+      </TouchableOpacity>
+    </ImageBackground>
+  );
 }
 
 const styles = StyleSheet.create({
-    background: {
-        flex: 1,
-        justifyContent: "flex-end",
-        alignItems: "center",
-    },
-    buttonsContainer: {
-        padding: 5,
-        width: "65%",
-        justifyContent: 'center',
-    },
-    logo: {
-        width: 200,
-        height: 130,
-    },
-    logoContainer: {
-        position: 'absolute',
-        top: 70,
-        alignItems: "center",
-        fontSize: 70,
-    },
-    tagline: {
-        fontSize: 45,
-        fontStyle: "italic",
-        fontWeight: "600",
-        paddingVertical: 60,
-        textAlign: "center",
-    },
-    below: {
-        fontSize: 20,
-        color: colors.white,
-        fontStyle: "italic",
-        fontWeight: "600",
-        textAlign: "center",
-    },
-})
+  background: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  buttonsContainer: {
+    padding: 5,
+    width: "65%",
+    justifyContent: "center",
+  },
+  logo: {
+    width: 180,
+    height: 120,
+  },
+  logoContainer: {
+    position: "absolute",
+    top: 70,
+    alignItems: "center",
+  },
+  tagline: {
+    fontSize: 28,
+    fontWeight: "bold",
+    paddingVertical: 30,
+    textAlign: "center",
+  },
+  info: {
+    position: "absolute",
+    bottom: 30,
+    right: 20,
+  },
+});
 
 export default CompassWelcome;

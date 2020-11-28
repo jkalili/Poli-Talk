@@ -8,6 +8,7 @@ import Login from "../screens/Login";
 import Meeting from "../screens/Meeting";
 import Report from "../screens/Report";
 import PostConversation from "../screens/PostConversation";
+import CompassWelcome from "../screens/CompassWelcome";
 
 const Stack = createStackNavigator();
 
@@ -77,6 +78,16 @@ const AppNavigator = () => (
       component={CompassTest}
       options={{
         title: "Political Compass Test",
+        headerShown: false,
+      }}
+    />
+
+    <Stack.Screen
+      name="CompassWelcome"
+      component={CompassWelcome}
+      options={{
+        title: "Compass Welcome",
+        headerShown: false,
       }}
     />
   </Stack.Navigator>

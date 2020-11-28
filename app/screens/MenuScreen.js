@@ -37,7 +37,6 @@ function MenuScreen({ navigation }) {
       </View>
       <TouchableOpacity
         onPress={() => {
-          console.log("clicked");
           Alert.alert("Signout", "", [
             { text: "Cancel" },
             { text: "Confirm", onPress: () => navigation.navigate("Login") },
@@ -154,7 +153,7 @@ function MenuScreen({ navigation }) {
       </View>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate("CompassTest")}
+        onPress={() => navigation.navigate("CompassWelcome")}
         style={styles.friendsListCard}
       >
         <Text style={styles.title}>Compass Test</Text>
