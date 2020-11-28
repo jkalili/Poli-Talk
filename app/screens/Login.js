@@ -1,3 +1,4 @@
+//By Jason Kalili
 import React from "react";
 import {
   Image,
@@ -10,7 +11,6 @@ import {
 
 import colors from "../config/colors";
 
-//login screen done by Jason
 function Login({ navigation }) {
   return (
     <ImageBackground

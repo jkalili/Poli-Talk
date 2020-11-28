@@ -1,3 +1,4 @@
+//By Adrian Leung
 import React from "react";
 import { View, StyleSheet, Text, Linking } from "react-native";
 

@@ -1,3 +1,4 @@
+//By Adrian Leung
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 function Topics({ topic, number }) {

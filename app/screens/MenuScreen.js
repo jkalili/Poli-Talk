@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+//By Adrian Leung & Jason Kalili
+import React from "react";
 import {
   Text,
   View,

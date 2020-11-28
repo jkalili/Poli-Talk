@@ -1,3 +1,4 @@
+//By Cristian Ornelas
 import React from "react";
 import {
   View,
@@ -17,7 +18,7 @@ function CompassTest({ navigation }) {
     <ImageBackground
       blurRadius={7}
       style={styles.background}
-      source={require("../assets/compassBackground.jpg")}
+      source={require("../assets/background1.jpg")}
     >
       <View style={styles.logoIcon}>
         <Image

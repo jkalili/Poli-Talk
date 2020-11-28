@@ -1,13 +1,9 @@
+//By Cristian Ornelas & Jason Kalili(slider)
+
 import React from "react";
 import Slider from "@react-native-community/slider";
 
-import {
-  View,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  onPress,
-} from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import colors from "../config/colors";
 
 function Prompt({ title, subTitle, onPress }) {

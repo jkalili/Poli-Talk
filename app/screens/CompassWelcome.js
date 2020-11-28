@@ -1,3 +1,4 @@
+//By Cristian Ornelas & Jason Kalili
 import React from "react";
 import {
   ImageBackground,
