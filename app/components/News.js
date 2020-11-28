@@ -1,45 +1,29 @@
-//By Adrian Leung
-import React from "react";
-import { View, StyleSheet, Text, Linking } from "react-native";
+import React from 'react';
+import {View, StyleSheet, Text, Linking} from 'react-native';
 
-function News({ title, subTitle, date, publisher }) {
-  return (
-    <View
-      style={styles.container}
-      onPress={() => Linking.openURL("http://google.com")}
-    >
-      <Text
-        style={styles.title}
-        onPress={() => Linking.openURL("http://google.com")}
-      >
-        {title}
-      </Text>
-      <Text
-        style={styles.date}
-        onPress={() => Linking.openURL("http://google.com")}
-      >
-        {publisher} {date}
-      </Text>
-    </View>
-  );
+function News({title, date, publisher, link}) {
+    return (
+      <View style ={styles.container}>
+          <Text style = {styles.title} onPress={()=>Linking.openURL(`${link}`)}>{title}</Text>
+          <Text style = {styles.date}>{publisher} {date}</Text>
+      </View>
+    );
 }
 const styles = StyleSheet.create({
-  container: {
-    textAlign: "center",
-    alignContent: "center",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  date: {
-    color: "#6e6969",
-    marginBottom: 10,
-  },
-  title: {
-    textAlign: "center",
-    fontWeight: "500",
-    marginTop: 10,
-    marginBottom: 5,
-    marginHorizontal: 5,
-  },
-});
+    container:{
+        alignItems:"center",
+    },
+    date:{
+        color:"#6e6969",
+        marginBottom:10
+    },
+    title:{
+        fontWeight: '500',
+        marginTop:10,
+        marginBottom:5,
+        marginHorizontal:5,
+        textAlign:"center"
+
+    },
+})
 export default News;
