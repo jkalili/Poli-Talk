@@ -16,7 +16,6 @@ function ComingSoon(props) {
     <TouchableWithoutFeedback style={styles.logoContainer}>
       <ImageBackground
         style={styles.background}
-        blurRadius={3}
         source={require("../assets/background2.jpg")}
       >
         <View>

@@ -10,6 +10,7 @@ import {
   Animated,
   Easing,
   TextInput,
+  Button,
 } from "react-native";
 
 import colors from "../config/colors";
@@ -83,7 +84,6 @@ export default class PostConversation extends React.Component {
       <ImageBackground
         style={styles.container}
         source={require("../assets/background2.jpg")}
-        blurRadius={3}
       >
         <Text style={styles.header}>RATE YOUR CONVERSATION</Text>
         <View style={{ flexDirection: "row" }}>{stars}</View>
@@ -93,6 +93,7 @@ export default class PostConversation extends React.Component {
           placeholder="leave some feedback!"
           placeholderTextColor="rgba(255,255,255,0.7)"
         />
+
         <TouchableOpacity
           onPress={() => {
             this.props.navigation.navigate("MenuScreen");
